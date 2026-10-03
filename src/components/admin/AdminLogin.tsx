@@ -25,10 +25,6 @@ export default function AdminLogin() {
     }
   };
 
-  const handleUseDemo = () => {
-    setEmail("admin@roopandrivaaz.com");
-    setPassword("admin123");
-  };
 
   return (
     <div className="min-h-screen bg-[#fcfaf5] flex flex-col justify-center items-center px-4 py-12">
@@ -91,7 +87,7 @@ export default function AdminLogin() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="admin@roopandrivaaz.com"
+                  placeholder="Enter username (e.g. Abhinav16)"
                   className="w-full pl-10 pr-4 py-2.5 bg-[#fcfaf5] border border-[#e8ddcd] text-xs text-[#261d1c] rounded-xs focus:outline-hidden focus:border-[#c5902f]"
                 />
               </div>
@@ -139,28 +135,14 @@ export default function AdminLogin() {
             </button>
           </form>
 
-          {/* Helper Callout */}
-          <div className="bg-[#fcfaf5] p-3.5 rounded-xs border border-[#e8ddcd] text-[11px] space-y-1.5 text-[#746863]">
-            <div className="flex items-center justify-between font-semibold text-[#35141f]">
-              <span className="flex items-center gap-1">
-                <Sparkles size={12} className="text-[#c5902f]" /> Default Master Admin:
-              </span>
-              <button
-                type="button"
-                onClick={handleUseDemo}
-                className="text-[10px] text-[#7b1e3a] underline font-bold cursor-pointer hover:text-[#35141f]"
-              >
-                Auto-fill
-              </button>
+          {/* Security Notice */}
+          <div className="bg-[#fcfaf5] p-3.5 rounded-xs border border-[#e8ddcd] text-[11px] space-y-1 text-[#746863]">
+            <div className="flex items-center gap-1.5 font-semibold text-[#35141f]">
+              <Lock size={12} className="text-[#c5902f]" />
+              <span>Encrypted Admin Access</span>
             </div>
-            <p>
-              Email: <code className="bg-white px-1 py-0.5 rounded-xs border border-[#e8ddcd]">admin@roopandrivaaz.com</code>
-            </p>
-            <p>
-              Password: <code className="bg-white px-1 py-0.5 rounded-xs border border-[#e8ddcd]">admin123</code>
-            </p>
-            <p className="text-[10px] text-[#746863]/80 italic pt-1">
-              Supports both Firebase Auth accounts and local master admin credentials.
+            <p className="text-[10px] text-[#746863] leading-relaxed">
+              Restricted to verified boutique administrators. All session events and changes are authenticated.
             </p>
           </div>
         </div>

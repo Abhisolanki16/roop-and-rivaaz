@@ -97,22 +97,22 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
 
     // 2. Standalone / Initial Master Admin Credential Fallback
-    // Default admin email: admin@roopandrivaaz.com (or username 'admin')
-    // Default admin pass: 'admin123' (or custom password set in settings)
+    // Master admin credentials: Abhinav16 / Abhinav@1607 (or custom password set in settings)
     const storedPass =
       typeof window !== "undefined"
-        ? localStorage.getItem(LOCAL_ADMIN_PASS_KEY) || "admin123"
-        : "admin123";
+        ? localStorage.getItem(LOCAL_ADMIN_PASS_KEY) || "Abhinav@1607"
+        : "Abhinav@1607";
 
     const isEmailMatch =
-      trimmedEmail.toLowerCase() === "admin@roopandrivaaz.com" ||
-      trimmedEmail.toLowerCase() === "admin" ||
-      trimmedEmail.toLowerCase() === "roopandrivaaz";
+      trimmedEmail.toLowerCase() === "abhinav16" ||
+      trimmedEmail.toLowerCase() === "abhinav16@roopandrivaaz.com" ||
+      trimmedEmail.toLowerCase() === "abhinav" ||
+      trimmedEmail.toLowerCase() === "admin@roopandrivaaz.com";
 
     if (isEmailMatch && trimmedPass === storedPass) {
       const loggedUser: AdminUser = {
-        email: trimmedEmail.includes("@") ? trimmedEmail : `${trimmedEmail}@roopandrivaaz.com`,
-        uid: "local-master-admin",
+        email: "Abhinav16",
+        uid: "master-admin-abhinav16",
         isFirebaseUser: false,
       };
       setUser(loggedUser);
