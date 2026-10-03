@@ -1,0 +1,10 @@
+{
+  "description": "Explore a curated catalog of premium Indian jewellery and festive accessories, featuring detailed product views and easy inquiry options for direct purchases.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
